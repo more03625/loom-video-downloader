@@ -27,8 +27,8 @@ const downloadLoomVideo = (url, filename) => {
 
 };
 
-const main = async (urlFromMain) => {
-  const id = urlFromMain.split('/').pop();
+const main = async (videoUrl) => {
+  const id = videoUrl.split('/').pop();
   const urlResponse = await fetchLoomDownloadUrl(id);
 
   if (urlResponse.success) {
