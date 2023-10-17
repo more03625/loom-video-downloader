@@ -1,0 +1,20 @@
+{
+  "name": "loomdownloader",
+  "version": "1.0.0",
+  "description": "Loom Video Downloader is a simple Node.js api to download videos from loom.com. It retrieves the video download link based on the video ID in the URL and saves the video with a specified filename or, by default, the video ID.",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rahul More",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
