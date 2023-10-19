@@ -32,3 +32,6 @@ To download a video from loom.com, run the following command, replacing the URL 
 5. Your loom video will be downloaded to your local folder.
 6. This will download the video and save it as `[VideoId].mp4`.
 ---
+
+# Demo
+![download-loom-video-postman-request-demo](https://raw.githubusercontent.com/more03625/loom-video-downloader/main/images/download-loom-video-postman-request-demo.png)
