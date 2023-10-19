@@ -27,7 +27,8 @@ To download a video from loom.com, run the following command, replacing the URL 
 
 1. npm install
 2. npm run dev
-3. Go to the postman & create POST request with `url` parameter.
-4. Your loom video will be downloaded to your local folder.
-5. This will download the video and save it as `[VideoId].mp4`.
+3. You application will start on ```http://localhost:8080```
+4. Create a POST request to the ```http://localhost:8080/download-video``` endpoint with a url key in the JSON body containing the URL of the loom video you want to download.
+5. Your loom video will be downloaded to your local folder.
+6. This will download the video and save it as `[VideoId].mp4`.
 ---
