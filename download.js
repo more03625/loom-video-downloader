@@ -19,13 +19,18 @@ const downloadLoomVideo = (url, filename) => {
       response.pipe(file);
     });
 
-    console.log('request', request);
     return { success: true, message: 'Video has been downloaded successfully.' }
   } catch (error) {
     return { success: false, message: 'There are some issues while downloading video.' }
   }
 
 };
+
+const isLoomVideoUrl = (url) => {
+  const loomDomain = 'www.loom.com';
+  const trimmedUrl = url.trim();
+  return trimmedUrl.startsWith('https://') && trimmedUrl.includes(loomDomain);
+}
 
 const main = async (videoUrl) => {
   const id = videoUrl.split('/').pop();
@@ -41,5 +46,5 @@ const main = async (videoUrl) => {
 };
 
 module.exports = {
-  main
+  main, isLoomVideoUrl
 }
