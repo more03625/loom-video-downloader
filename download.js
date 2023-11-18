@@ -32,10 +32,14 @@ const isLoomVideoUrl = (url) => {
   return trimmedUrl.startsWith('https://') && trimmedUrl.includes(loomDomain);
 }
 
-const main = async (videoUrl) => {
-  const id = videoUrl.split('/').pop();
-  const urlResponse = await fetchLoomDownloadUrl(id);
+const getId = (videoUrl) => {
+  const id = videoUrl.split('/').pop().split("?").shift();
+  return id
+}
 
+const main = async (videoUrl) => {
+  const id = getId(videoUrl);
+  const urlResponse = await fetchLoomDownloadUrl(id);
   if (urlResponse.success) {
     const filename = `${id}.mp4`;
     const response = downloadLoomVideo(urlResponse.data, filename);
