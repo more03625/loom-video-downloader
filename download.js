@@ -1,6 +1,7 @@
 const axios = require('axios');
 const fs = require('fs');
 const https = require('https');
+const path = require('path');
 
 const fetchLoomDownloadUrl = async (id) => {
   try {
@@ -14,7 +15,12 @@ const fetchLoomDownloadUrl = async (id) => {
 const downloadLoomVideo = (url, filename) => {
 
   try {
-    const file = fs.createWriteStream(filename);
+    const dir = 'downloaded-videos'
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+
+    const file = fs.createWriteStream(path.join(dir, filename));
     const request = https.get(url, function (response) {
       response.pipe(file);
     });
